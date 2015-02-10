@@ -31,6 +31,7 @@ class BootStrap {
             assert Role.count() == 2
             assert UserRole.count() == 1*/
       }
+      
       def destroy = {
       }
 }

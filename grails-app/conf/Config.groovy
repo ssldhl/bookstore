@@ -103,7 +103,7 @@ log4j.main = {
       //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
       //}
 
-      debug 'org.springframework.security'
+//      debug 'org.springframework.security'
 
       error  'org.codehaus.groovy.grails.web.servlet',        // controllers
             'org.codehaus.groovy.grails.web.pages',          // GSP
@@ -132,6 +132,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
-	'/**/favicon.ico':                ['permitAll']
+	'/**/favicon.ico':                ['permitAll'],
+	'/secure/index':                  ['ROLE_ADMIN']
 ]
 
