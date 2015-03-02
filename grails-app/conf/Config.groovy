@@ -103,7 +103,7 @@ log4j.main = {
       //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
       //}
 
-//      debug 'org.springframework.security'
+      debug 'org.springframework.security'
 
       error  'org.codehaus.groovy.grails.web.servlet',        // controllers
             'org.codehaus.groovy.grails.web.pages',          // GSP
@@ -124,15 +124,5 @@ log4j.main = {
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.bookstore.auth.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.bookstore.auth.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.bookstore.auth.Role'
-grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                              ['permitAll'],
-	'/index':                         ['permitAll'],
-	'/index.gsp':                     ['permitAll'],
-	'/assets/**':                     ['permitAll'],
-	'/**/js/**':                      ['permitAll'],
-	'/**/css/**':                     ['permitAll'],
-	'/**/images/**':                  ['permitAll'],
-	'/**/favicon.ico':                ['permitAll'],
-	'/secure/index':                  ['ROLE_ADMIN']
-]
-
+grails.plugin.springsecurity.requestMap.className = 'com.bookstore.auth.Requestmap'
+grails.plugin.springsecurity.securityConfigType = "Requestmap"
